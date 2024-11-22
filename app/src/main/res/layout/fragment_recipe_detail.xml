@@ -1,0 +1,239 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="282dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/recipeImage"
+                android:layout_width="16dp"
+                android:layout_height="213dp"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ch" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="16dp">
+
+                <TextView
+                    android:id="@+id/recipeNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="French Toast with Berries"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RatingBar
+                    android:id="@+id/recipeRating"
+                    android:layout_width="189dp"
+                    android:layout_height="43dp"
+                    android:numStars="4"
+                    android:rating="4"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5"
+                    android:stepSize="0.2" />
+
+                <LinearLayout
+                    android:layout_width="90dp"
+                    android:layout_height="37dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/timeicon" />
+
+                    <TextView
+                        android:id="@+id/recipeTime"
+                        android:layout_width="36dp"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="8dp"
+                        android:text="30 mins"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/serve" />
+
+                    <TextView
+                        android:id="@+id/recipeServings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="8dp"
+                        android:text="1 Serving" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/recipeIngredientsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Ingredients"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Add ID to HorizontalScrollView for ingredients -->
+        <HorizontalScrollView
+            android:id="@+id/ingredientScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Filter Buttons -->
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/coca"
+                    android:layout_marginRight="8dp"
+                    android:background="#F1F1F1"
+                    app:shapeAppearanceOverlay="@style/RoundedImage" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/eggicon"
+                    android:background="#F1F1F1"
+                    android:layout_marginRight="8dp"
+                    app:shapeAppearanceOverlay="@style/RoundedImage" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="centerCrop"
+                    android:background="#F1F1F1"
+                    android:src="@drawable/flour"
+                    android:layout_marginRight="8dp"
+                    app:shapeAppearanceOverlay="@style/RoundedImage" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="#F1F1F1"
+                    android:layout_marginRight="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/milk"
+                    app:shapeAppearanceOverlay="@style/RoundedImage" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/sugar"
+                    android:layout_marginRight="8dp"
+                    android:background="#F1F1F1"
+                    app:shapeAppearanceOverlay="@style/RoundedImage" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/butter"
+                    android:layout_marginRight="8dp"
+                    android:background="#F1F1F1"
+                    app:shapeAppearanceOverlay="@style/RoundedImage" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/vanila"
+                    android:layout_marginRight="8dp"
+                    android:background="#F1F1F1"
+                    app:shapeAppearanceOverlay="@style/RoundedImage" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/youghurt"
+                    android:background="#F1F1F1"
+                    android:layout_marginRight="8dp"
+                    app:shapeAppearanceOverlay="@style/RoundedImage" />
+
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- Add ID to the directions section -->
+        <LinearLayout
+            android:id="@+id/directionsSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/shadowed_box"
+            android:padding="16dp"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/recipeDirectionsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="👩‍🍳 How to Make Cake"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/recipeList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:lineSpacingExtra="8dp"
+                android:text="1️⃣ Preheat oven to 180°C.\n\n2️⃣ Mix all ingredients together. 🥣\n\n3️⃣ Pour batter into a greased pan. 🧈\n\n4️⃣ Bake for 30 minutes and enjoy! 🎂"
+                android:textColor="#444444"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/startBakingButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🎉 Start Baking Now!"
+                android:backgroundTint="#FFB74D"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="16dp"
+                android:padding="12dp"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/poppins_bold" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recipeRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="2dp"
+            android:clipToPadding="false"
+            android:scrollbars="vertical" />
+    </LinearLayout>
+</ScrollView>

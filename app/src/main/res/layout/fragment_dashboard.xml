@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DashboardFragment">
+
+    <!-- Scrollable content -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="56dp"
+        android:clipToPadding="false"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dividerPadding="8dp"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+            <!-- Recipe Box 1 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/rounded_box"
+                >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/notrecipeImage1"
+                    android:layout_width="91dp"
+                    android:layout_height="94dp"
+                    android:layout_marginStart="288dp"
+                    android:layout_marginTop="36dp"
+                    android:src="@drawable/notcooking"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/recipeImage1"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/notbread"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/recipeTitle1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Toast With US"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/recipeImage1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/recipeSubtitle1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Recipe by: Toni"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/recipeImage1"
+                    app:layout_constraintTop_toBottomOf="@+id/recipeTitle1" />
+
+                <RatingBar
+                    android:id="@+id/recipeRating1"
+                    android:layout_width="238dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:numStars="5"
+                    android:rating="4.5"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5"
+                    android:stepSize="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/recipeImage1"
+                    app:layout_constraintTop_toBottomOf="@+id/recipeSubtitle1" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Add more recipe boxes here -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/rounded_box"
+                >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/notrecipeImage2"
+                    android:layout_width="91dp"
+                    android:layout_height="94dp"
+                    android:layout_marginStart="288dp"
+                    android:layout_marginTop="36dp"
+                    android:src="@drawable/notbake"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/recipeImage2"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/notcake"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/recipeTitle2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Bake With US"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/recipeImage2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/recipeSubtitle2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Recipe by: Jhon"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/recipeImage2"
+                    app:layout_constraintTop_toBottomOf="@+id/recipeTitle2" />
+
+                <RatingBar
+                    android:id="@+id/recipeRating2"
+                    android:layout_width="238dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:numStars="5"
+                    android:rating="3.4"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5"
+                    android:stepSize="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/recipeImage2"
+                    app:layout_constraintTop_toBottomOf="@+id/recipeSubtitle2" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/rounded_box"
+                >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/notrecipeImage3"
+                    android:layout_width="91dp"
+                    android:layout_height="94dp"
+                    android:layout_marginStart="280dp"
+                    android:layout_marginTop="36dp"
+                    android:src="@drawable/notcorner"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/recipeImage3"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/notbrown"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/recipeTitle3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Sweet Life"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/recipeImage3"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/recipeSubtitle3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Recipe by: Tasu"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/recipeImage3"
+                    app:layout_constraintTop_toBottomOf="@+id/recipeTitle3" />
+
+                <RatingBar
+                    android:id="@+id/recipeRating3"
+                    android:layout_width="238dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:numStars="5"
+                    android:rating="4.4"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5"
+                    android:stepSize="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/recipeImage3"
+                    app:layout_constraintTop_toBottomOf="@+id/recipeSubtitle3" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/rounded_box"
+                >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/notrecipeImage4"
+                    android:layout_width="91dp"
+                    android:layout_height="94dp"
+                    android:layout_marginStart="288dp"
+                    android:layout_marginTop="36dp"
+                    android:src="@drawable/notbake"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/recipeImage4"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/notwok"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/recipeTitle4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Woke With US"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/recipeImage4"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/recipeSubtitle4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Recipe by: Edwin"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/recipeImage4"
+                    app:layout_constraintTop_toBottomOf="@+id/recipeTitle4" />
+
+                <RatingBar
+                    android:id="@+id/recipeRating4"
+                    android:layout_width="238dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:numStars="5"
+                    android:rating="5"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5"
+                    android:stepSize="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/recipeImage4"
+                    app:layout_constraintTop_toBottomOf="@+id/recipeSubtitle4" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/rounded_box"
+                >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/notrecipeImage6"
+                    android:layout_width="91dp"
+                    android:layout_height="94dp"
+                    android:layout_marginStart="288dp"
+                    android:layout_marginTop="36dp"
+                    android:src="@drawable/notcook"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/recipeImage6"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/notgrill"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/recipeTitle6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Grill With US"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/recipeImage6"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/recipeSubtitle6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Recipe by: Kog"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/recipeImage6"
+                    app:layout_constraintTop_toBottomOf="@+id/recipeTitle6" />
+
+                <RatingBar
+                    android:id="@+id/recipeRating6"
+                    android:layout_width="238dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:numStars="5"
+                    android:rating="2.4"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5"
+                    android:stepSize="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/recipeImage6"
+                    app:layout_constraintTop_toBottomOf="@+id/recipeSubtitle6" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/rounded_box"
+                >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/notrecipeImage5"
+                    android:layout_width="91dp"
+                    android:layout_height="94dp"
+                    android:layout_marginStart="284dp"
+                    android:layout_marginTop="36dp"
+                    android:src="@drawable/notcorner"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/recipeImage5"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/notbreadm"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/recipeTitle5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Bake With US"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/recipeImage5"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/recipeSubtitle5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Recipe by: Sin"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/recipeImage5"
+                    app:layout_constraintTop_toBottomOf="@+id/recipeTitle5" />
+
+                <RatingBar
+                    android:id="@+id/recipeRating5"
+                    android:layout_width="238dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:numStars="5"
+                    android:rating="3.4"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5"
+                    android:stepSize="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/recipeImage5"
+                    app:layout_constraintTop_toBottomOf="@+id/recipeSubtitle5" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/rounded_box"
+                >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/notrecipeImage7"
+                    android:layout_width="91dp"
+                    android:layout_height="94dp"
+                    android:layout_marginStart="288dp"
+                    android:layout_marginTop="36dp"
+                    android:src="@drawable/notcook"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/recipeImage7"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/notburger"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/recipeTitle7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Burger World"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/recipeImage7"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/recipeSubtitle7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Recipe by: Kito"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@+id/recipeImage7"
+                    app:layout_constraintTop_toBottomOf="@+id/recipeTitle7" />
+
+                <RatingBar
+                    android:id="@+id/recipeRating7"
+                    android:layout_width="238dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:numStars="5"
+                    android:rating="3.4"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5"
+                    android:stepSize="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/recipeImage7"
+                    app:layout_constraintTop_toBottomOf="@+id/recipeSubtitle7" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/rounded_box"
+                >
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/notrecipeImage8"
+                    android:layout_width="91dp"
+                    android:layout_height="94dp"
+                    android:layout_marginStart="288dp"
+                    android:layout_marginTop="36dp"
+                    android:src="@drawable/notwin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/recipeImage8"
+                    android:layout_width="85dp"
+                    android:layout_height="97dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/notkit"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/recipeTitle8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Win Free Cooking Kit"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/recipeImage8"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/recipeSubtitle8"
+                    android:layout_width="177dp"
+                    android:layout_height="19dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="JOIN NOW..."
+                    android:textAlignment="center"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/recipeImage8"
+                    app:layout_constraintTop_toBottomOf="@+id/recipeTitle8" />
+
+                <RatingBar
+                    android:id="@+id/recipeRating8"
+                    android:layout_width="238dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:numStars="5"
+                    android:rating="5"
+                    android:scaleX="0.5"
+                    android:scaleY="0.5"
+                    android:stepSize="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/recipeImage8"
+                    app:layout_constraintTop_toBottomOf="@+id/recipeSubtitle8" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/markAllAsReadButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorAccent"
+        android:text="Mark All as Read"
+        android:textColor="@android:color/white"
+        android:layout_gravity="bottom"
+        android:layout_margin="16dp"
+        android:padding="12dp" />
+</FrameLayout>

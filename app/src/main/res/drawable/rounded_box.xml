@@ -1,0 +1,19 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background image -->
+    <item>
+        <bitmap
+            android:src="@drawable/backgroundnot"
+            android:gravity="center" />
+    </item>
+
+    <!-- Rounded corners and border -->
+    <item>
+        <shape>
+            <solid android:color="@android:color/transparent" />
+            <corners android:radius="12dp" />
+            <stroke
+                android:width="1dp"
+                android:color="@android:color/darker_gray" />
+        </shape>
+    </item>
+</layer-list>
