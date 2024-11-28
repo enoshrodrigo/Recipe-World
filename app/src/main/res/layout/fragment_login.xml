@@ -1,48 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:gravity="center">
+    android:background="#FFF8E1">
+
+    <!-- Top Image -->
+
+    <!-- Title -->
+
+    <ImageView
+        android:id="@+id/topImage"
+        android:layout_width="match_parent"
+        android:layout_height="156dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/panlogin" />
 
     <TextView
         android:id="@+id/loginTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login to Recipe World"
-        android:textSize="20sp"
+        android:text="LOGIN"
+        android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_marginBottom="24dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/topImage"
+        android:layout_marginTop="16dp"
+        android:textColor="#333333" />
 
-    <EditText
-        android:id="@+id/loginEmail"
+    <!-- Floating Card -->
+    <LinearLayout
+        android:id="@+id/floatingCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Email"
-        android:inputType="textEmailAddress"
-        android:layout_marginBottom="16dp" />
+        android:orientation="vertical"
+        android:layout_margin="32dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/rounded_shadow_background"
+        android:padding="24dp"
+        android:elevation="8dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/loginTitle">
 
-    <EditText
-        android:id="@+id/loginPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Password"
-        android:inputType="textPassword"
-        android:layout_marginBottom="24dp" />
+        <!-- Email Input -->
+        <EditText
+            android:id="@+id/loginEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:padding="12dp"
+            android:background="@drawable/input_background"
+            android:layout_marginBottom="16dp"
+            android:textColor="#333333" />
 
-    <Button
-        android:id="@+id/loginButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        android:layout_marginBottom="16dp" />
+        <!-- Password Input -->
+        <EditText
+            android:id="@+id/loginPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:background="@drawable/input_background"
+            android:layout_marginBottom="16dp"
+            android:textColor="#333333" />
 
+        <!-- Forgot Password -->
+        <TextView
+            android:id="@+id/forgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Forgot Password?"
+            android:textColor="#FFA726"
+            android:textStyle="bold"
+            android:layout_gravity="end" />
+
+        <!-- Login Button -->
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:backgroundTint="#FFC107"
+            android:textColor="@android:color/white"
+            android:padding="12dp"
+            android:elevation="4dp" />
+    </LinearLayout>
+
+    <!-- Register Link -->
     <TextView
         android:id="@+id/registerRedirectText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Don’t have an account? Register here"
-        android:textColor="@android:color/holo_blue_dark"
-        android:layout_gravity="center" />
-</LinearLayout>
+        android:layout_below="@id/floatingCard"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Don’t have an account? Sign up"
+        android:textColor="#666666" />
+</RelativeLayout>

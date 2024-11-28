@@ -1,14 +1,508 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NotificationsFragment">
+    android:background="#E3F6FF">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- Top background image -->
+    <ImageView
+        android:id="@+id/topBackground"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profilebackground"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+  <!-- Name and title -->
+    <ImageView
+        android:id="@+id/profileImage"
+        android:layout_width="106dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="112dp"
+        android:background="@drawable/shadowed_box"
+        android:contentDescription="Profile Picture"
+        android:src="@drawable/profilephoto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Marreco Rillsan"
+        android:textSize="20sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/profileImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="COOKING SINCE OCT 2018"
+        android:textSize="14sp"
+        android:textColor="#8A8A8A"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Buttons -->
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/advancedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Advanced"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#4A90E2" />
+
+        <Button
+            android:id="@+id/userChoiceButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Choice"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#D9534F"
+            android:layout_marginStart="16dp" />
+    </LinearLayout>
+
+    <!-- Recipes section -->
+    <TextView
+        android:id="@+id/recipesTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Today's Dinner Recipes"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/buttonLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp" />
+
+    <TextView
+        android:id="@+id/showAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show all"
+        android:textSize="14sp"
+        android:textColor="#4A90E2"
+        app:layout_constraintTop_toTopOf="@id/recipesTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp" />
+
+    <HorizontalScrollView
+        android:id="@+id/recipeScroll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:overScrollMode="never"
+        app:layout_constraintTop_toBottomOf="@id/recipesTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/recipesContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <!-- Recipe Card 1 -->
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/shadowed_box"
+                 android:layout_marginEnd="16dp"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/fishprofile"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rice with tomatoes and fish"
+                    android:textColor="#000"
+                    android:paddingTop="8dp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/shadowed_box"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/saladpastaprofile"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pasta with vegitables and Chicken"
+                    android:textColor="#000"
+                    android:paddingTop="8dp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/shadowed_box"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/lasagnaprofile"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="lasagna with tomatoes and Beef"
+                    android:textColor="#000"
+                    android:paddingTop="8dp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/shadowed_box"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/pizzaprofile"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pizza with tomatoes and mushroom"
+                    android:textColor="#000"
+                    android:paddingTop="8dp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/shadowed_box"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/tacosprofile"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tacos with meat and salad"
+                    android:textColor="#000"
+                    android:paddingTop="8dp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/shadowed_box"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/ongiriprofile"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ongiri with saman and soy"
+                    android:textColor="#000"
+                    android:paddingTop="8dp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/shadowed_box"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/sushiprofile"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sushi with tuna and vegitables"
+                    android:textColor="#000"
+                    android:paddingTop="8dp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+            <!-- Add more Recipe Cards as needed -->
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/recipesTitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="For You"
+        android:textSize="18sp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/recipeScroll"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp" />
+    <TextView
+        android:id="@+id/showAll2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show all"
+        android:textSize="14sp"
+        android:textColor="#4A90E2"
+        app:layout_constraintTop_toTopOf="@id/recipesTitle2"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp" />
+
+    <HorizontalScrollView
+        android:id="@+id/recipeScroll2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:overScrollMode="never"
+        app:layout_constraintTop_toBottomOf="@id/recipesTitle2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/recipesContainer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <!-- Recipe Card 1 -->
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/shadowed_box"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/cheeseprofile"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cheese cake with strawbery"
+                    android:textColor="#000"
+                    android:paddingTop="8dp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/shadowed_box"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/faludaprofile"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Faluda with almond and ice cream"
+                    android:textColor="#000"
+                    android:paddingTop="8dp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/shadowed_box"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/icecreamprofile"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ice cream with strawberry and blueberry"
+                    android:textColor="#000"
+                    android:paddingTop="8dp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/shadowed_box"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/pizzaprofile"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pizza with sausage and chicken"
+                    android:textColor="#000"
+                    android:paddingTop="8dp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/shadowed_box"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/tacosprofile"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tacos with fish and chicken"
+                    android:textColor="#000"
+                    android:paddingTop="8dp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/shadowed_box"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/ongiriprofile"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ongiri with cheese and soy"
+                    android:textColor="#000"
+                    android:paddingTop="8dp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/shadowed_box"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/caramelprofile"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Custard pudding with vanila and cinamon"
+                    android:textColor="#000"
+                    android:paddingTop="8dp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+            <!-- Add more Recipe Cards as needed -->
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
